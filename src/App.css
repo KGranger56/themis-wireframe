@@ -1,38 +1,241 @@
+:root {
+  --main-background-color:#f8f8ff;
+  --main-text-color: #ffffff;
+  --secondary-text-color: #ceced4;
+}
+
 .App {
+  font-family: Suisse,sans-serif;
+  font-weight: bold;
+}
+
+body {background: var(--main-background-color);}
+
+[class^="row-"] {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+[class^="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.border {
+  display: flex;
+  border-radius: 13rem;
+  width: 2rem;
+  height: 2rem;
+  color: var(--main-text-color);
+}
+
+
+/*Page Heading*/
+
+.pageInfo {
+  display: flex;
+  flex-direction: column; 
+}
+
+.pageInfo > .row-1 > div {
+  width: 100%;
+  vertical-align: middle;
+  margin: 0 auto;
+  justify-content: space-around;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  margin: 0 auto;
   display: flex;
+}
+
+.admin {
+  background-color: #e1e2f0;
+  color: #6870b4;
+}
+
+.icon {
+  color: #6870b4
+}
+
+.dark {
+  background-color: var(--main-background-color);
+}
+
+div.col-3.policyCurrentPerson, div.col-4.policyCurrentPerson, div.col-5.policyCurrentPerson, .NP {
+  width: 19rem;
+  height: 2rem;
+  border-radius: 13rem;
+  margin: 0rem .2rem;
+  color: var(--main-text-color);
+}
+
+.draft {
+  background-color: #6870b4;
+  color: var(--main-text-color);
+}
+
+.export {
+  background-color: #6d71f9;
+  color: var(--main-text-color);
+}
+
+.policyButton {
+  background-color: #e1e2f0;
+  padding: .5rem .6rem;
+  border-radius: 13rem;
+}
+
+
+/*Currently viewing persons*/
+.NP {
+  background-color: #e63956;
+}
+.ZF { 
+  background-color: #6ec8f9;
+}
+.WS {
+  background-color: #4d004c;
+}
+
+/*Left Menu*/
+.leftMenu {
+  max-width: 22rem;
   flex-direction: column;
+}
+
+.internal, .notices {
+  background-color: #6d71f9;
+  padding: .5rem .6rem;
+  border-radius: .6rem;
+  color: var(--main-text-color);
+  flex-direction: row;
+} 
+
+.gridDots, .noticeNumber {
+  display: flex;
+  margin-left: 5rem;
+}
+
+.notices > div {
+  display: flex;
+  position: fixed;
+  border-radius: 13rem;
+  margin: -.4rem 8rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  color: #6d71f9;
+  background-color: var(--main-text-color);
+}
+
+span.noticeNumber {
+  margin-top: .3rem;
+  margin-left: .7rem;
+}
+
+/*Table Specific Attributes*/
+
+
+.rightTable {
+  width: 100%;
+}
+
+.tableStart> .row-1 {
+  justify-content: space-around;
+  margin-top: -19rem;
+  width: 78rem;
+}
+
+table {
+  background-color: var(--main-text-color);
+  margin-top: 1rem;
+  margin-left: 13rem;
+  width: 78rem;
+  text-align: left;
+}
+
+
+th, td {
+  border:1px solid var(--secondary-text-color);
+  padding: 1rem;
+}
+
+tr {
+  width: 100%;
+  height: 3rem;
+}
+
+ul {
+  font-weight: bold;
+  padding-inline-start: 0rem;
+}
+
+ul > li {
+  color: var(--secondary-text-color);
+  list-style-type: none;
+  padding-inline-start: 1.5rem;
+}
+
+.modules  > ul > li {
+  color: #6d71f9;
+}
+
+.moreOptions {
+  background-color: #e1e2f0;
+}
+
+/*Policy Owner Specific*/
+
+.active {
+  background-color: #f0f0fe; 
+  color: #6870b4;
+}
+
+.deptOwner {
+  color: #6ec8f9;
+}
+
+.PS {background-color: #e63956;}
+.DJ {background-color: #ff87a7;}
+.TS {background-color: #ff9f4d;}
+.SM {background-color: #6d8cf9;}
+.GC {background-color: #3a14a7;}
+.NC {background-color: #6ec8f9;}
+.BW {background-color: #4d004c;}
+.TF {background-color: #4c50be;}
+.MB {background-color: #f8c453;}
+.JK {background-color: #f95b46;}
+
+.newPolicy {
+  border: 1px solid #fad179;
+  font-weight: normal;
+  color: var(--secondary-text-color);
+}
+
+.owner {
+  display: flex;
+  margin-top: -.5rem;
+  margin-bottom: -.5rem;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+span.PO {
+  display: flex;
+  padding-left: 2.6rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+/* Table title background-color: #f5f5fa; color: #8d8d98;
+Table more options background-color: #6870b4;
+Add new policy border-color: ;
+Table Selection background-color: #f0f0fe; color: #6870b4;
+Current modules background-color: #fad179;
+Table Finance Value color: #6870b4;
+*/
+
