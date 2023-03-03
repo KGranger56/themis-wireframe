@@ -7,17 +7,16 @@
 .App {
   font-family: Suisse,sans-serif;
   font-weight: bold;
+  display: flex;
+  background: var(--main-background-color);
 }
 
-body {background: var(--main-background-color);}
-
-[class^="row-"] {
+[class^="rows-"] {
   display: flex;
   flex-direction: row;
-  width: 100%;
 }
 
-[class^="col-"] {
+[class^="cols-"] {
   display: flex;
   flex-direction: column;
 }
@@ -38,8 +37,7 @@ body {background: var(--main-background-color);}
   flex-direction: column; 
 }
 
-.pageInfo > .row-1 > div {
-  width: 100%;
+.pageInfo > .rows-1 > div {
   vertical-align: middle;
   margin: 0 auto;
   justify-content: space-around;
@@ -64,8 +62,7 @@ h1 {
   background-color: var(--main-background-color);
 }
 
-div.col-3.policyCurrentPerson, div.col-4.policyCurrentPerson, div.col-5.policyCurrentPerson, .NP {
-  width: 19rem;
+div> .policyCurrentPerson {
   height: 2rem;
   border-radius: 13rem;
   margin: 0rem .2rem;
@@ -75,11 +72,26 @@ div.col-3.policyCurrentPerson, div.col-4.policyCurrentPerson, div.col-5.policyCu
 .draft {
   background-color: #6870b4;
   color: var(--main-text-color);
+  display: flex;
+  justify-content: center;
+  border-radius: 13rem;
+}
+
+.draft>span {
+  padding-left: .6rem;
 }
 
 .export {
   background-color: #6d71f9;
   color: var(--main-text-color);
+  margin-left: 53rem;
+  border-radius: 13rem;
+}
+
+.moreChoices {
+  display: flex;
+  text-align: right;
+  margin-right: 2rem;
 }
 
 .policyButton {
@@ -140,26 +152,35 @@ span.noticeNumber {
 
 .rightTable {
   width: 100%;
+  margin-top: 1rem;
 }
 
-.tableStart> .row-1 {
-  justify-content: space-around;
-  margin-top: -19rem;
-  width: 78rem;
+.tableStart {
+  background-color: var(--main-text-color);
+  border-radius: 2rem;
+
+}
+
+.tableStart> div.rows-1 {
+  justify-content: space-between;
 }
 
 table {
   background-color: var(--main-text-color);
-  margin-top: 1rem;
-  margin-left: 13rem;
   width: 78rem;
   text-align: left;
+  border-collapse: collapse;
 }
 
+.tableTitles {
+  background-color: #f5f5fa;
+  border-bottom-width: .5rem; 
+  border-bottom-color: var(--main-text-color);
+}
 
-th, td {
-  border:1px solid var(--secondary-text-color);
-  padding: 1rem;
+tr > td {
+  border-width:1px; 
+  border-color: var(--secondary-text-color);
 }
 
 tr {
